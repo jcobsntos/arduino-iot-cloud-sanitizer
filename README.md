@@ -66,7 +66,7 @@ This project presents a **microcontroller-based, contactless alcohol dispenser**
 
 ---
 ## 🧪 Methodology
-<details>
+<details open>
 <summary> <strong>Prototyping Model</strong></summary>
 
 <img width="663" height="348" alt="image" src="https://github.com/user-attachments/assets/7645804c-3381-4496-9482-5ab733e2d734" />
@@ -81,7 +81,7 @@ The Prototyping Model is an iterative system development process that emphasizes
 
 ## 🔌 System Architecture
 
-<details>
+<details open>
 <summary> <strong> 🧱 Block Diagram</strong></summary>
 
 <img width="891" height="712" alt="image" src="https://github.com/user-attachments/assets/beca3e5e-c001-4b08-b45e-41e213e392ad" />
@@ -92,7 +92,7 @@ As indicated from the block diagram, it is centered on the ESP32 microcontroller
 
 </details>
 
-<details>
+<details open>
 <summary> <strong>🔁 IPO Diagram</strong></summary>
 
 <img width="868" height="601" alt="image" src="https://github.com/user-attachments/assets/3e46026c-f7c0-4197-8ea4-7853b76f3fc4" />
@@ -107,16 +107,22 @@ The IPO (Input-Process-Output) model depicts the functional process of the autom
 
 ## 🏗️ Project Design
 
-<details>
+<details open>
 <summary> <strong> Solid and Cutaway View</strong></summary>
-  
-![Solid View](https://github.com/user-attachments/assets/ab7a522c-b4eb-43ab-8e9a-fcf26ae7afde)
 
-*Solid View*
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ab7a522c-b4eb-43ab-8e9a-fcf26ae7afde"  />
+</p>
+<p align="center">
+  Solid View
+</p>
 
-![Cutaway View](https://github.com/user-attachments/assets/97c08330-ea99-41b0-95c5-8f88b0f37acc)
-
-*Cutaway View*
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/97c08330-ea99-41b0-95c5-8f88b0f37acc"  />
+</p>
+<p align="center">
+  Cutaway View
+</p>
 
 <div align="justify">
 The model showcases the design of the microcontroller-based automatic hand sanitation dispenser that is compact and efficient for Emilio Aguinaldo College - Manila Building 7. The system incorporates major components such as an ESP32 microcontroller for IoT an IR sensor for automatic hand detection, a water pump for regulated alcohol dispensing, and an ultrasonic sensor to check the level of the alcohol container. A TFT display integrated to provide information on the present alcohol content and the system's status. Additionally, an LED indicator is positioned on the front of the dispenser to provide a quick visual cue of the alcohol level status: green for full, yellow for half, and red for empty. This combination of digital and visual feedback ensures user convenience and supports efficient system maintenance.
@@ -128,7 +134,7 @@ The model showcases the design of the microcontroller-based automatic hand sanit
 
 ## 📐 Circuit & Schematic Diagrams
 
-<details>
+<details open>
 <summary> <strong>🔋 Circuit Diagram</strong></summary>
 
 ![Circuit Diagram](https://github.com/user-attachments/assets/7f9f556d-3927-462e-9fa0-4c9eb9c7d62e)
@@ -140,7 +146,7 @@ The circuit diagram illustrates the core electronic layout of the microcontrolle
 </details>
 
 
-<details>
+<details open>
 <summary> <strong>🖥️ Schematic Diagram</strong></summary>
 
 ![Schematic](https://github.com/user-attachments/assets/683d0076-4bb3-4a9a-9227-3d4f7e680669)
@@ -155,15 +161,33 @@ The schematic diagram illustrates the interconnection of various electronic comp
 
 ## 🖼️ Front-End System (TFT UI)
 
+<details open>
+<summary> <strong> Alcohol Levels</strong></summary>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/524d290a-4644-4609-bc31-91e6106fe26b"  />
-  &nbsp; &nbsp;
+</p>
+<p align="center">
+  Alcohol level Full
+</p>
+<p align="center">
   <img src="https://github.com/user-attachments/assets/574bc571-71f6-42fb-8a81-b1f81316b6ff" />
+</p>
+<p align="center">
+  Alcohol level Medium
 </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/66bc3262-1553-45a1-b613-b7acd9fb5f61"  />
 </p>
+<p align="center">
+  Alcohol level Low
+</p>
 
+<div align="justify">
+As shown in the front-end display, the alcohol level has three different indications. When the alcohol level crosses 50%, it will turn green. 50% to 20%, it will turn yellow. Lastly, 20% below, it will turn red. This shows the three thresholds whenever the alcohol increases or decreases. The system status will remain off. when there is no object detected, it will turn on when the system is being used.
+</div>
+
+</details>
 
 ---
 
@@ -248,6 +272,13 @@ Verify ✅ → Upload 🔼
 
 ## 📬 Email Notification Format
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/049d2c18-8b4c-4c97-9565-1d721af4c0c2"  />
+</p>
+<p align="center">
+   Email Notification
+</p>
+
 ```text
 Subject: [ALERT] Refill Needed!
 Body: Alcohol level is now below 20%. Please refill the dispenser to maintain sanitation availability.
@@ -257,28 +288,55 @@ Body: Alcohol level is now below 20%. Please refill the dispenser to maintain sa
 
 ## 📍 Component Pinout Reference
 
-```md
-| Component        | ESP32 Pin |
-|------------------|-----------|
-| IR Sensor        | D27       |
-| Ultrasonic TRIG  | D13       |
-| Ultrasonic ECHO  | D12       |
-| Gear Motor       | D33       |
-| RGB LED          | D25       |
-| TFT LCD          | SPI Pins  |
-| Buzzer           | D26       |
-| Vibration Sensor | D14       |
-```
+| Component             | ESP32 Pin     |
+|-----------------------|---------------|
+| IR Sensor             | D4            |
+| Ultrasonic TRIG       | D5            |
+| Ultrasonic ECHO       | D18           |
+| RGB LED - Green       | D21           |
+| RGB LED - Yellow      | D22           |
+| RGB LED - Red         | D23           |
+| Gear Motor            | Connected directly to power supply |
+| Buzzer                | D1            |
+| Vibration Sensor      | D19           |
+| TFT LCD - MISO        | D16           |
+| TFT LCD - MOSI        | D13           |
+| TFT LCD - SCK         | D14           |
+| TFT LCD - CS          | D12           |
+| TFT LCD - DC          | D2            |
+| TFT LCD - RST         | D0            |
+| TFT LCD - BL (LED)    | D15           |
+| TFT LCD - VCC         | 5V            |
+| TFT LCD - GND         | GND           |
+
+**⚠️ Note: You must edit the User_Setup.h or appropriate setup file in the TFT_eSPI library folder to match the TFT LCD SPI pin mapping above.**
 
 ---
 
 ## 📊 Dashboard Preview
 
-```md
-![Mobile Dashboard](images/dashboard-mobile.png)
-![Desktop Dashboard](images/dashboard-desktop.png)
-```
+<details open>
+<summary> <strong> Mobile and Desktop View</strong></summary>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/85667641-c7dd-404a-bd2a-8b8da170bf91"  />
+</p>
+<p align="center">
+  Mobile Dashboard
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/43425db2-b501-4aa8-9d4c-f76c285a8bd8"  />
+</p>
+<p align="center">
+  Desktop Dashboard
+</p>
+
+<div align="justify">
+The back-end shows for both mobile and desktop, it displays real-time monitoring data via IoT such as alcohol level, system status, and usage data.
+</div>
+
+</details>
+  
 ---
 
 ## 🔧 Troubleshooting
